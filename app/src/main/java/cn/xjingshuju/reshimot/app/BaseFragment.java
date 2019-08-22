@@ -3,12 +3,15 @@ package cn.xjingshuju.reshimot.app;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import butterknife.ButterKnife;
 
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements BaseView {
     protected T mPresenter;
@@ -27,6 +30,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (null == view) {
             view = inflater.inflate(getLayout(), container, false);
+            ButterKnife.bind(view);
         } else {
             ViewGroup parent = (ViewGroup) view.getParent();
             if (null != parent) {

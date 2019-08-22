@@ -2,8 +2,11 @@ package cn.xjingshuju.reshimot.app;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import butterknife.ButterKnife;
 
 /**
  * BaseActivity
@@ -20,6 +23,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());//设置布局文件
+        ButterKnife.bind(this);
         mContext = this;//给Context赋值
         createPresenter();//创建presenter
         if (mPresenter != null) {
