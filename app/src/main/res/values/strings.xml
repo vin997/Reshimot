@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Reshimot</string>
+    <string name="navHome">首页</string>
+    <string name="navMine">我的</string>
+    <string name="navCart">购物车</string>
+    <string name="navDiscover">发现</string>
+    <string name="navCategory">分类</string>
 </resources>

@@ -19,6 +19,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected Activity mContext; //context
 
 
+    @SuppressWarnings("unchecked")
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
