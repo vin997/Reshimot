@@ -1,13 +1,33 @@
 package cn.xjingshuju.reshimot;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import cn.xjingshuju.reshimot.app.App;
+import cn.xjingshuju.reshimot.app.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initEventAndData() {
+
+    }
+
+    @Override
+    protected void createPresenter() {
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        App.getInstance().exitApp();
     }
 }
